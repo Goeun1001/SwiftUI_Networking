@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AddView: View {
     @ObservedObject var viewModel = PostViewModel()
-    
+
     var body: some View {
         VStack(spacing: 10) {
             TextField("제목", text: $viewModel.title)
@@ -22,7 +22,7 @@ struct AddView: View {
             }
         }.padding(.leading, 30)
             .padding(.trailing, 30)
-        
+
     }
 }
 

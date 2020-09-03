@@ -17,7 +17,7 @@
 		D962DF4E2500B4E000491EF5 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF4D2500B4E000491EF5 /* PostViewModel.swift */; };
 		D962DF512500B50600491EF5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF502500B50600491EF5 /* Post.swift */; };
 		D962DF532500B55000491EF5 /* PostListVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF522500B55000491EF5 /* PostListVIew.swift */; };
-		D962DF582500BA4000491EF5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF572500BA4000491EF5 /* Image.swift */; };
+		D962DF582500BA4000491EF5 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF572500BA4000491EF5 /* ImageDownloader.swift */; };
 		D962DF5A2500BC2300491EF5 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF592500BC2300491EF5 /* ImageView.swift */; };
 		D962DF9C2500BEFB00491EF5 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF9B2500BEFB00491EF5 /* AddView.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +37,7 @@
 		D962DF4D2500B4E000491EF5 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		D962DF502500B50600491EF5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D962DF522500B55000491EF5 /* PostListVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListVIew.swift; sourceTree = "<group>"; };
-		D962DF572500BA4000491EF5 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D962DF572500BA4000491EF5 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D962DF592500BC2300491EF5 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		D962DF9B2500BEFB00491EF5 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D962DF4A2500B37100491EF5 /* PostService.swift */,
-				D962DF572500BA4000491EF5 /* Image.swift */,
+				D962DF572500BA4000491EF5 /* ImageDownloader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -153,6 +153,7 @@
 				D962DF2F2500B35E00491EF5 /* Frameworks */,
 				D962DF302500B35E00491EF5 /* Resources */,
 				6193CEF46CEE2D4EBAF44AB5 /* [CP] Embed Pods Frameworks */,
+				D93EA2E62500DF4B00FBC29F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -249,6 +250,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoyaEx/Pods-MoyaEx-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D93EA2E62500DF4B00FBC29F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -257,7 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D962DF362500B35E00491EF5 /* AppDelegate.swift in Sources */,
-				D962DF582500BA4000491EF5 /* Image.swift in Sources */,
+				D962DF582500BA4000491EF5 /* ImageDownloader.swift in Sources */,
 				D962DF9C2500BEFB00491EF5 /* AddView.swift in Sources */,
 				D962DF382500B35E00491EF5 /* SceneDelegate.swift in Sources */,
 				D962DF512500B50600491EF5 /* Post.swift in Sources */,

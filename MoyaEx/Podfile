@@ -8,5 +8,6 @@ target 'MoyaEx' do
   # Pods for MoyaEx
 pod 'Moya'
 pod 'Kingfisher'
+pod 'SwiftLint'
 
 end

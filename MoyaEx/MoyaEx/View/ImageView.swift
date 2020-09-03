@@ -9,15 +9,15 @@
 import SwiftUI
 
 struct imageView: View {
-    
+
     let url: String
     @ObservedObject private var imageDownloader: ImageDownloader = ImageDownloader()
-    
+
     init(url: String) {
         self.url = url
         self.imageDownloader.downloadImage(url: self.url)
     }
-    
+
     var body: some View {
         if let imageData = self.imageDownloader.downloadedImage {
             return VStack {

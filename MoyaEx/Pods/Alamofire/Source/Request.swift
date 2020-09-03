@@ -986,7 +986,7 @@ public class DataRequest: Request {
 
     /// Protected storage for the `Data` read by the instance.
     @Protected
-    private var mutableData: Data? = nil
+    private var mutableData: Data?
 
     /// Creates a `DataRequest` using the provided parameters.
     ///

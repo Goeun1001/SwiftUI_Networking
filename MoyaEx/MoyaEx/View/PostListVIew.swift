@@ -7,11 +7,10 @@
 //
 
 import SwiftUI
-import Moya
 
-struct PostListView : View {
+struct PostListView: View {
     @ObservedObject var viewModel = PostViewModel()
-    
+
     var body: some View {
         NavigationView {
             List(self.viewModel.posts, id: \.id) { post in
@@ -29,7 +28,7 @@ struct PostListView : View {
     }
 }
 
-struct PostListView_Previews : PreviewProvider {
+struct PostListView_Previews: PreviewProvider {
     static var previews: some View {
         PostListView()
     }
@@ -37,12 +36,12 @@ struct PostListView_Previews : PreviewProvider {
 
 struct ContentView: View {
     let post: Post
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             imageView(url: post.imagePath)
                 .frame(width: 100, height: 100, alignment: .center)
-            
+
             Text(String(post.id))
             Text(post.title).font(.headline)
         }

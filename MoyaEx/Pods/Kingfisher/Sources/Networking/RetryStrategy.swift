@@ -41,7 +41,7 @@ public class RetryContext {
     /// A user set value for passing any other information during the retry. If you choose to use `RetryDecision.retry`
     /// as the retry decision for `RetryStrategy.retry(context:retryHandler:)`, the associated value of
     /// `RetryDecision.retry` will be delivered to you in the next retry.
-    public internal(set) var userInfo: Any? = nil
+    public internal(set) var userInfo: Any?
 
     init(source: Source, error: KingfisherError) {
         self.source = source

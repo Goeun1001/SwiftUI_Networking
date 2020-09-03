@@ -12,11 +12,11 @@ import Combine
 
 class PostViewModel: ObservableObject {
     @Published var posts = [Post]()
-    
+
     @Published var title = ""
     @Published var content = ""
     @Published var imagePath = ""
-    
+
     func load() {
         let provider = MoyaProvider<PostService>()
         provider.request(.getPosts) { result in
@@ -27,8 +27,7 @@ class PostViewModel: ObservableObject {
                     let posts = try filteredResponse.map([Post].self)
                     self.posts = posts
                     self.objectWillChange.send()
-                }
-                catch let error {
+                } catch let error {
                      print("Error: \(error)")
                 }
             case let .failure(error):
@@ -36,7 +35,7 @@ class PostViewModel: ObservableObject {
             }
         }
     }
-    
+
     func create() {
         let provider = MoyaProvider<PostService>()
         provider.request(.createPost(title: title, content: content, imagePath: imagePath)) { result in
@@ -45,8 +44,7 @@ class PostViewModel: ObservableObject {
                 do {
                     _ = try moyaResponse.filterSuccessfulStatusCodes()
                     print("create succeed")
-                }
-                catch let error {
+                } catch let error {
                      print("Error: \(error)")
                 }
             case let .failure(error):
@@ -54,5 +52,5 @@ class PostViewModel: ObservableObject {
             }
         }
     }
-    
+
 }

@@ -26,7 +26,6 @@
 
 import Foundation
 
-
 /// Represents a set of conception related to storage which stores a certain type of value in disk.
 /// This is a namespace for the disk storage types. A `Backend` with a certain `Config` will be used to describe the
 /// storage. See these composed types for more information.
@@ -47,7 +46,7 @@ public enum DiskStorage {
 
         let metaChangingQueue: DispatchQueue
 
-        var maybeCached : Set<String>?
+        var maybeCached: Set<String>?
         let maybeCachedCheckingQueue = DispatchQueue(label: "com.onevcat.Kingfisher.maybeCachedCheckingQueue")
 
         /// Creates a disk storage with the given `DiskStorage.Config`.
@@ -110,12 +109,11 @@ public enum DiskStorage {
         func store(
             value: T,
             forKey key: String,
-            expiration: StorageExpiration? = nil) throws
-        {
+            expiration: StorageExpiration? = nil) throws {
             let expiration = expiration ?? config.expiration
             // The expiration indicates that already expired, no need to store.
             guard !expiration.isExpired else { return }
-            
+
             let data: Data
             do {
                 data = try value.toData()
@@ -133,7 +131,7 @@ public enum DiskStorage {
             }
 
             let now = Date()
-            let attributes: [FileAttributeKey : Any] = [
+            let attributes: [FileAttributeKey: Any] = [
                 // The last access date.
                 .creationDate: now.fileAttributeDate,
                 // The estimated expiration date.
@@ -165,8 +163,7 @@ public enum DiskStorage {
             forKey key: String,
             referenceDate: Date,
             actuallyLoad: Bool,
-            extendingExpiration: ExpirationExtending) throws -> T?
-        {
+            extendingExpiration: ExpirationExtending) throws -> T? {
             let fileManager = config.fileManager
             let fileURL = cacheFileURL(forKey: key)
             let filePath = fileURL.path
@@ -277,8 +274,7 @@ public enum DiskStorage {
             let fileManager = config.fileManager
 
             guard let directoryEnumerator = fileManager.enumerator(
-                at: directoryURL, includingPropertiesForKeys: propertyKeys, options: .skipsHiddenFiles) else
-            {
+                at: directoryURL, includingPropertiesForKeys: propertyKeys, options: .skipsHiddenFiles) else {
                 throw KingfisherError.cacheError(reason: .fileEnumeratorCreationFailed(url: directoryURL))
             }
 
@@ -378,7 +374,7 @@ extension DiskStorage {
 
         /// The preferred extension of cache item. It will be appended to the file name as its extension.
         /// Default is `nil`, means that the cache file does not contain a file extension.
-        public var pathExtension: String? = nil
+        public var pathExtension: String?
 
         /// Default is `true`, means that the cache file name will be hashed before storing.
         public var usesHashedFileName = true
@@ -407,8 +403,7 @@ extension DiskStorage {
             name: String,
             sizeLimit: UInt,
             fileManager: FileManager = .default,
-            directory: URL? = nil)
-        {
+            directory: URL? = nil) {
             self.name = name
             self.fileManager = fileManager
             self.directory = directory
@@ -419,18 +414,18 @@ extension DiskStorage {
 
 extension DiskStorage {
     struct FileMeta {
-    
+
         let url: URL
-        
+
         let lastAccessDate: Date?
         let estimatedExpirationDate: Date?
         let isDirectory: Bool
         let fileSize: Int
-        
+
         static func lastAccessDate(lhs: FileMeta, rhs: FileMeta) -> Bool {
             return lhs.lastAccessDate ?? .distantPast > rhs.lastAccessDate ?? .distantPast
         }
-        
+
         init(fileURL: URL, resourceKeys: Set<URLResourceKey>) throws {
             let meta = try fileURL.resourceValues(forKeys: resourceKeys)
             self.init(
@@ -440,14 +435,13 @@ extension DiskStorage {
                 isDirectory: meta.isDirectory ?? false,
                 fileSize: meta.fileSize ?? 0)
         }
-        
+
         init(
             fileURL: URL,
             lastAccessDate: Date?,
             estimatedExpirationDate: Date?,
             isDirectory: Bool,
-            fileSize: Int)
-        {
+            fileSize: Int) {
             self.url = fileURL
             self.lastAccessDate = lastAccessDate
             self.estimatedExpirationDate = estimatedExpirationDate
@@ -458,15 +452,14 @@ extension DiskStorage {
         func expired(referenceDate: Date) -> Bool {
             return estimatedExpirationDate?.isPast(referenceDate: referenceDate) ?? true
         }
-        
+
         func extendExpiration(with fileManager: FileManager, extendingExpiration: ExpirationExtending) {
             guard let lastAccessDate = lastAccessDate,
-                  let lastEstimatedExpiration = estimatedExpirationDate else
-            {
+                  let lastEstimatedExpiration = estimatedExpirationDate else {
                 return
             }
 
-            let attributes: [FileAttributeKey : Any]
+            let attributes: [FileAttributeKey: Any]
 
             switch extendingExpiration {
             case .none:
@@ -490,4 +483,3 @@ extension DiskStorage {
         }
     }
 }
-

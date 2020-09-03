@@ -100,7 +100,7 @@ public struct AVAssetImageDataProvider: ImageDataProvider {
 
     public func data(handler: @escaping (Result<Data, Error>) -> Void) {
         assetImageGenerator.generateCGImagesAsynchronously(forTimes: [NSValue(time: time)]) {
-            (requestedTime, image, imageTime, result, error) in
+            (_, image, _, result, error) in
             if let error = error {
                 handler(.failure(error))
                 return
