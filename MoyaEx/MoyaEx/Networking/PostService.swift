@@ -37,7 +37,13 @@ extension PostService: TargetType {
 
     // 테스트 시 쓸 가짜 데이터
     var sampleData: Data {
-        return "".data(using: .utf8)!
+        switch self {
+        case .getPosts:
+            return "{\"id\": \"0\", \"Title\": \"Test\", \"content\": \"Test\", \"imagePath\": \"Testimage\"}".data(using: .utf8)!
+        case .createPost(title: let title, content: let content, imagePath: let imagePath):
+            return "".data(using: .utf8)!
+        }
+        //        return "".data(using: .utf8)!
     }
 
     // 기본요청(plain request), 데이터 요청(data request), 파라미터 요청(parameter request), 업로드 요청(upload request) 등
@@ -56,7 +62,7 @@ extension PostService: TargetType {
 
     // HTTP code가 200에서 299사이인 경우 요청이 성공한 것으로 간주된다.
     public var validationType: ValidationType {
-      return .successCodes
+        return .successCodes
     }
 
 }

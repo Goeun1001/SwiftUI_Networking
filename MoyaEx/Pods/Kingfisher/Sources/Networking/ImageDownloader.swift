@@ -137,7 +137,7 @@ open class ImageDownloader {
     open weak var authenticationChallengeResponder: AuthenticationChallengeResponsable?
 
     private let name: String
-    private weak var sessionDelegate: SessionDelegate
+    private weak var sessionDelegate: SessionDelegate?
     private var session: URLSession
 
     // MARK: Initializers
@@ -166,17 +166,17 @@ open class ImageDownloader {
     deinit { session.invalidateAndCancel() }
 
     private func setupSessionHandler() {
-        sessionDelegate.onReceiveSessionChallenge.delegate(on: self) { (self, invoke) in
+        sessionDelegate?.onReceiveSessionChallenge.delegate(on: self) { (self, invoke) in
             self.authenticationChallengeResponder?.downloader(self, didReceive: invoke.1, completionHandler: invoke.2)
         }
-        sessionDelegate.onReceiveSessionTaskChallenge.delegate(on: self) { (self, invoke) in
+        sessionDelegate?.onReceiveSessionTaskChallenge.delegate(on: self) { (self, invoke) in
             self.authenticationChallengeResponder?.downloader(
                 self, task: invoke.1, didReceive: invoke.2, completionHandler: invoke.3)
         }
-        sessionDelegate.onValidStatusCode.delegate(on: self) { (self, code) in
+        sessionDelegate?.onValidStatusCode.delegate(on: self) { (self, code) in
             return (self.delegate ?? self).isValidStatusCode(code, for: self)
         }
-        sessionDelegate.onDownloadingFinished.delegate(on: self) { (self, value) in
+        sessionDelegate?.onDownloadingFinished.delegate(on: self) { (self, value) in
             let (url, result) = value
             do {
                 let value = try result.get()
@@ -185,7 +185,7 @@ open class ImageDownloader {
                 self.delegate?.imageDownloader(self, didFinishDownloadingImageForURL: url, with: nil, error: error)
             }
         }
-        sessionDelegate.onDidDownloadData.delegate(on: self) { (self, task) in
+        sessionDelegate?.onDidDownloadData.delegate(on: self) { (self, task) in
             guard let url = task.task.originalRequest?.url else {
                 return task.mutableData
             }
@@ -251,12 +251,12 @@ open class ImageDownloader {
         // Ready to start download. Add it to session task manager (`sessionHandler`)
 
         let downloadTask: DownloadTask
-        if let existingTask = sessionDelegate.task(for: url) {
-            downloadTask = sessionDelegate.append(existingTask, url: url, callback: callback)
+        if let existingTask = sessionDelegate?.task(for: url) {
+            downloadTask = sessionDelegate?.append(existingTask, url: url, callback: callback) as! DownloadTask
         } else {
             let sessionDataTask = session.dataTask(with: request)
             sessionDataTask.priority = options.downloadPriority
-            downloadTask = sessionDelegate.add(sessionDataTask, url: url, callback: callback)
+            downloadTask = sessionDelegate?.add(sessionDataTask, url: url, callback: callback) as! DownloadTask
         }
 
         let sessionTask = downloadTask.sessionTask
@@ -356,7 +356,7 @@ extension ImageDownloader {
     /// returned by the downloading methods. If you need to cancel all `DownloadTask`s of a certain url,
     /// use `ImageDownloader.cancel(url:)`.
     public func cancelAll() {
-        sessionDelegate.cancelAll()
+        sessionDelegate?.cancelAll()
     }
 
     /// Cancel all downloading tasks for a given URL. It will trigger the completion handlers for
@@ -364,7 +364,7 @@ extension ImageDownloader {
     ///
     /// - Parameter url: The URL which you want to cancel downloading.
     public func cancel(url: URL) {
-        sessionDelegate.cancel(url: url)
+        sessionDelegate?.cancel(url: url)
     }
 }
 

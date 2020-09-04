@@ -20,7 +20,18 @@
 		D962DF8E2500BD3E00491EF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D962DF8D2500BD3E00491EF5 /* Assets.xcassets */; };
 		D962DF912500BD3E00491EF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D962DF902500BD3E00491EF5 /* Preview Assets.xcassets */; };
 		D962DF942500BD3E00491EF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D962DF922500BD3E00491EF5 /* LaunchScreen.storyboard */; };
+		D978FB082501379E00B50F53 /* URLSessionExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D978FB072501379E00B50F53 /* URLSessionExTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D978FB0A2501379E00B50F53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D962DF7C2500BD3E00491EF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D962DF832500BD3E00491EF5;
+			remoteInfo = URLSessionEx;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		223B779E71C0E47220192B52 /* Pods_URLSessionEx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLSessionEx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +50,9 @@
 		D962DF902500BD3E00491EF5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D962DF932500BD3E00491EF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D962DF952500BD3E00491EF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D978FB052501379E00B50F53 /* URLSessionExTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLSessionExTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D978FB072501379E00B50F53 /* URLSessionExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExTests.swift; sourceTree = "<group>"; };
+		D978FB092501379E00B50F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDF91A06AD13CD0C3FC8759D /* Pods-URLSessionEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLSessionEx.debug.xcconfig"; path = "Target Support Files/Pods-URLSessionEx/Pods-URLSessionEx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,6 +62,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				89D33CDC452F4273125C97F3 /* Pods_URLSessionEx.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D978FB022501379E00B50F53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				D962DF862500BD3E00491EF5 /* URLSessionEx */,
+				D978FB062501379E00B50F53 /* URLSessionExTests */,
 				D962DF852500BD3E00491EF5 /* Products */,
 				DC42F53CC54F8F65C5673536 /* Pods */,
 				AB06430D4D188E0DE6087B3F /* Frameworks */,
@@ -104,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				D962DF842500BD3E00491EF5 /* URLSessionEx.app */,
+				D978FB052501379E00B50F53 /* URLSessionExTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +153,15 @@
 				D962DF902500BD3E00491EF5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D978FB062501379E00B50F53 /* URLSessionExTests */ = {
+			isa = PBXGroup;
+			children = (
+				D978FB072501379E00B50F53 /* URLSessionExTests.swift */,
+				D978FB092501379E00B50F53 /* Info.plist */,
+			);
+			path = URLSessionExTests;
 			sourceTree = "<group>";
 		};
 		DC42F53CC54F8F65C5673536 /* Pods */ = {
@@ -163,6 +195,24 @@
 			productReference = D962DF842500BD3E00491EF5 /* URLSessionEx.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D978FB042501379E00B50F53 /* URLSessionExTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D978FB0E2501379E00B50F53 /* Build configuration list for PBXNativeTarget "URLSessionExTests" */;
+			buildPhases = (
+				D978FB012501379E00B50F53 /* Sources */,
+				D978FB022501379E00B50F53 /* Frameworks */,
+				D978FB032501379E00B50F53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D978FB0B2501379E00B50F53 /* PBXTargetDependency */,
+			);
+			name = URLSessionExTests;
+			productName = URLSessionExTests;
+			productReference = D978FB052501379E00B50F53 /* URLSessionExTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,6 +225,10 @@
 				TargetAttributes = {
 					D962DF832500BD3E00491EF5 = {
 						CreatedOnToolsVersion = 11.6;
+					};
+					D978FB042501379E00B50F53 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = D962DF832500BD3E00491EF5;
 					};
 				};
 			};
@@ -192,6 +246,7 @@
 			projectRoot = "";
 			targets = (
 				D962DF832500BD3E00491EF5 /* URLSessionEx */,
+				D978FB042501379E00B50F53 /* URLSessionExTests */,
 			);
 		};
 /* End PBXProject section */
@@ -204,6 +259,13 @@
 				D962DF942500BD3E00491EF5 /* LaunchScreen.storyboard in Resources */,
 				D962DF912500BD3E00491EF5 /* Preview Assets.xcassets in Resources */,
 				D962DF8E2500BD3E00491EF5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D978FB032501379E00B50F53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +330,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D978FB012501379E00B50F53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D978FB082501379E00B50F53 /* URLSessionExTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D978FB0B2501379E00B50F53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D962DF832500BD3E00491EF5 /* URLSessionEx */;
+			targetProxy = D978FB0A2501379E00B50F53 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D962DF922500BD3E00491EF5 /* LaunchScreen.storyboard */ = {
@@ -438,6 +516,46 @@
 			};
 			name = Release;
 		};
+		D978FB0C2501379E00B50F53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C2JSJLJ4FN;
+				INFOPLIST_FILE = URLSessionExTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeonggo.URLSessionExTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/URLSessionEx.app/URLSessionEx";
+			};
+			name = Debug;
+		};
+		D978FB0D2501379E00B50F53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C2JSJLJ4FN;
+				INFOPLIST_FILE = URLSessionExTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeonggo.URLSessionExTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/URLSessionEx.app/URLSessionEx";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -455,6 +573,15 @@
 			buildConfigurations = (
 				D962DF992500BD3E00491EF5 /* Debug */,
 				D962DF9A2500BD3E00491EF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D978FB0E2501379E00B50F53 /* Build configuration list for PBXNativeTarget "URLSessionExTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D978FB0C2501379E00B50F53 /* Debug */,
+				D978FB0D2501379E00B50F53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

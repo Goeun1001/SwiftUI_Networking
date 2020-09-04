@@ -1,0 +1,6 @@
+framework module Pods_AlamofireExTests {
+  umbrella header "Pods-AlamofireExTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

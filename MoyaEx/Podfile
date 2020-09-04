@@ -9,5 +9,8 @@ target 'MoyaEx' do
 pod 'Moya'
 pod 'Kingfisher'
 pod 'SwiftLint'
+    target 'MoyaExTests' do
+       pod 'Moya'
+    end
 
 end
