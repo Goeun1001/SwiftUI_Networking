@@ -1,0 +1,27 @@
+name: Swift
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: MoyaEx test
+      run: |
+        cd MoyaEx
+        xcodebuild clean test -workspace MoyaEx.xcworkspace -scheme MoyaEx -destination 'platform=iOS Simulator,OS=13.6,name=iPhone 11 Pro Max'
+    - name: AlamofireEx test
+      run: |
+        cd AlamofireEx
+        xcodebuild clean test -workspace AlamofireEx.xcworkspace -scheme AlamofireEx -destination 'platform=iOS Simulator,OS=13.6,name=iPhone 11 Pro Max'
+    - name: URLSessionEx test
+      run: |
+        cd URLSessionEx
+        xcodebuild clean test -workspace URLSessionEx.xcworkspace -scheme URLSessionEx -destination 'platform=iOS Simulator,OS=13.6,name=iPhone 11 Pro Max'
