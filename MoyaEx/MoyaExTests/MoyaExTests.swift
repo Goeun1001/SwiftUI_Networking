@@ -70,7 +70,7 @@ class MoyaExTests: XCTestCase {
             }
         }
     }
-    
+
     func test_ViewModelLoad() {
         let viewModel = PostViewModel()
         viewModel.load()
