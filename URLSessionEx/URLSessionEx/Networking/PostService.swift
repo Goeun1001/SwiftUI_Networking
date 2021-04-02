@@ -12,7 +12,7 @@ class PostService {
     var posts = [Post]()
 
     func getAllPosts() {
-        guard let url = URL(string: "http://127.0.0.1:8000/post/") else { return }
+        guard let url = URL(string: "http://127.0.0.1:8000/post") else { return }
 
         URLSession.shared.dataTask(with: url) {
             (data, _, _) in
@@ -27,7 +27,7 @@ class PostService {
     }
 
     func getAllPosts(completion: @escaping ([Post]?) -> Void) {
-        guard let url = URL(string: "http://127.0.0.1:8000/post/") else { return }
+        guard let url = URL(string: "http://127.0.0.1:8000/post") else { return }
 
         var request = URLRequest(url: url)
 

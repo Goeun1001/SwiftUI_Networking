@@ -8,22 +8,19 @@ on:
 
 jobs:
   build:
-
     runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Force Xcode 11
-      run: sudo xcode-select -switch /Applications/Xcode_11.3.app
     - name: MoyaEx test
       run: |
         cd MoyaEx
-        xcodebuild clean test -workspace MoyaEx.xcworkspace -scheme MoyaEx -destination 'platform=iOS Simulator,OS=13.6,name=iPhone 11 Pro Max'
+        xcodebuild clean test -workspace MoyaEx.xcworkspace -scheme MoyaEx -destination 'platform=iOS Simulator,OS=14.4,name=iPhone 11 Pro Max'
     - name: AlamofireEx test
       run: |
         cd AlamofireEx
-        xcodebuild clean test -workspace AlamofireEx.xcworkspace -scheme AlamofireEx -destination 'platform=iOS Simulator,OS=13.6,name=iPhone 11 Pro Max'
+        xcodebuild clean test -workspace AlamofireEx.xcworkspace -scheme AlamofireEx -destination 'platform=iOS Simulator,OS=14.4,name=iPhone 11 Pro Max'
     - name: URLSessionEx test
       run: |
         cd URLSessionEx
-        xcodebuild clean test -workspace URLSessionEx.xcworkspace -scheme URLSessionEx -destination 'platform=iOS Simulator,OS=13.6,name=iPhone 11 Pro Max'
+        xcodebuild clean test -workspace URLSessionEx.xcworkspace -scheme URLSessionEx -destination 'platform=iOS Simulator,OS=14.4,name=iPhone 11 Pro Max'

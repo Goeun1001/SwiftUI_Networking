@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0970029B6EF04790FF2BAEB8 /* Pods_MoyaEx_MoyaExTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39D27023389A40B779991E0E /* Pods_MoyaEx_MoyaExTests.framework */; };
 		4F9A1BD7B867D1B898635605 /* Pods_MoyaEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5315015EA9F31DD06314155 /* Pods_MoyaEx.framework */; };
+		D93C61122616B1820099383B /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C61112616B1820099383B /* ImageView.swift */; };
+		D93C611A2616B19D0099383B /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C61192616B19D0099383B /* ImageDownloader.swift */; };
 		D962DF362500B35E00491EF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF352500B35E00491EF5 /* AppDelegate.swift */; };
 		D962DF382500B35E00491EF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF372500B35E00491EF5 /* SceneDelegate.swift */; };
 		D962DF3C2500B36000491EF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D962DF3B2500B36000491EF5 /* Assets.xcassets */; };
@@ -18,8 +20,6 @@
 		D962DF4E2500B4E000491EF5 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF4D2500B4E000491EF5 /* PostViewModel.swift */; };
 		D962DF512500B50600491EF5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF502500B50600491EF5 /* Post.swift */; };
 		D962DF532500B55000491EF5 /* PostListVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF522500B55000491EF5 /* PostListVIew.swift */; };
-		D962DF582500BA4000491EF5 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF572500BA4000491EF5 /* ImageDownloader.swift */; };
-		D962DF5A2500BC2300491EF5 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF592500BC2300491EF5 /* ImageView.swift */; };
 		D962DF9C2500BEFB00491EF5 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962DF9B2500BEFB00491EF5 /* AddView.swift */; };
 		D978FB162501B54B00B50F53 /* MoyaExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D978FB152501B54B00B50F53 /* MoyaExTests.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +40,8 @@
 		BA54B9B4A614FFD33A7970A8 /* Pods-MoyaEx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoyaEx.release.xcconfig"; path = "Target Support Files/Pods-MoyaEx/Pods-MoyaEx.release.xcconfig"; sourceTree = "<group>"; };
 		C6F7725F89BC09DC3FF24688 /* Pods-MoyaEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoyaEx.debug.xcconfig"; path = "Target Support Files/Pods-MoyaEx/Pods-MoyaEx.debug.xcconfig"; sourceTree = "<group>"; };
 		D5315015EA9F31DD06314155 /* Pods_MoyaEx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoyaEx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D93C61112616B1820099383B /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		D93C61192616B19D0099383B /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D962DF322500B35E00491EF5 /* MoyaEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoyaEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D962DF352500B35E00491EF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D962DF372500B35E00491EF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,8 +53,6 @@
 		D962DF4D2500B4E000491EF5 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		D962DF502500B50600491EF5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D962DF522500B55000491EF5 /* PostListVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListVIew.swift; sourceTree = "<group>"; };
-		D962DF572500BA4000491EF5 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
-		D962DF592500BC2300491EF5 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		D962DF9B2500BEFB00491EF5 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		D978FB132501B54B00B50F53 /* MoyaExTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoyaExTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D978FB152501B54B00B50F53 /* MoyaExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaExTests.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				D962DF4A2500B37100491EF5 /* PostService.swift */,
-				D962DF572500BA4000491EF5 /* ImageDownloader.swift */,
+				D93C61192616B19D0099383B /* ImageDownloader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -158,8 +158,8 @@
 			children = (
 				D962DF522500B55000491EF5 /* PostListVIew.swift */,
 				D962DF4D2500B4E000491EF5 /* PostViewModel.swift */,
-				D962DF592500BC2300491EF5 /* ImageView.swift */,
 				D962DF9B2500BEFB00491EF5 /* AddView.swift */,
+				D93C61112616B1820099383B /* ImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,13 +386,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D962DF362500B35E00491EF5 /* AppDelegate.swift in Sources */,
-				D962DF582500BA4000491EF5 /* ImageDownloader.swift in Sources */,
 				D962DF9C2500BEFB00491EF5 /* AddView.swift in Sources */,
 				D962DF382500B35E00491EF5 /* SceneDelegate.swift in Sources */,
 				D962DF512500B50600491EF5 /* Post.swift in Sources */,
 				D962DF532500B55000491EF5 /* PostListVIew.swift in Sources */,
+				D93C61122616B1820099383B /* ImageView.swift in Sources */,
 				D962DF4B2500B37100491EF5 /* PostService.swift in Sources */,
-				D962DF5A2500BC2300491EF5 /* ImageView.swift in Sources */,
+				D93C611A2616B19D0099383B /* ImageDownloader.swift in Sources */,
 				D962DF4E2500B4E000491EF5 /* PostViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

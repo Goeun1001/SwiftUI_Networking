@@ -12,7 +12,7 @@ import Alamofire
 class PostService {
     func getAllPosts(completion: @escaping ([Post]?) -> Void) {
 
-        AF.request("http://127.0.0.1:8000/post/").responseJSON {response in
+        AF.request("http://127.0.0.1:8000/post").responseJSON {response in
             guard let data = response.data else {return}
             do {
                 guard let posts = try? JSONDecoder().decode([Post].self, from: data) else {return}
@@ -29,7 +29,7 @@ class PostService {
             "imagePath": imagePath
         ]
 
-        AF.request("http://127.0.0.1:8000/post/", method: .post, parameters: parameter, encoder: JSONParameterEncoder.default).responseJSON { request in
+        AF.request("http://127.0.0.1:8000/post", method: .post, parameters: parameter, encoder: JSONParameterEncoder.default).responseJSON { request in
             guard let data = request.data, request.error == nil else {
                 DispatchQueue.main.async {
                     completion(nil)

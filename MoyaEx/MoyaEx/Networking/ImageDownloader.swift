@@ -1,26 +1,25 @@
 //
-//  Image.swift
+//  ImageDownloader.swift
 //  MoyaEx
 //
-//  Created by jge on 2020/09/03.
-//  Copyright © 2020 jge. All rights reserved.
+//  Created by GoEun Jeong on 2021/04/02.
+//  Copyright © 2021 jge. All rights reserved.
 //
 
 import Foundation
-import Kingfisher
 
 class ImageDownloader: ObservableObject {
     @Published var downloadedData: Data?
-    @Published var downloadedImage: UIImage?
 
     func downloadImage(url: String) {
-        guard let imageURL = URL(string: url), downloadedImage == nil else { return }
-        KingfisherManager.shared.retrieveImage(with: imageURL) { result in
-            switch result {
-            case .success(let imageResult):
-                self.downloadedImage = imageResult.image
-            case .failure:
-                break
+        guard let imageURL = URL(string: url) else {
+            fatalError("Invalid URL")
+        }
+
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: imageURL)
+            DispatchQueue.main.async {
+                self.downloadedData = data
             }
         }
     }

@@ -21,9 +21,9 @@ extension PostService: TargetType {
     var path: String {
         switch self {
         case .getPosts:
-            return "/post/"
+            return "/post"
         case .createPost:
-            return "/post/"
+            return "/post"
         }
     }
     var method: Moya.Method {
